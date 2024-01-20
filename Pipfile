@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aiohttp = "*"
+qiskit = "*"
+qiskit-aer = "*"
+requests = "*"
+bs4 = "*"
+openai = "*"
+
+[dev-packages]
+isort = "*"
+black = "*"
+
+[requires]
+python_version = "3.11"
