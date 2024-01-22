@@ -14,7 +14,7 @@ The project is structured into several Python modules, which include:
 - `README.md`: Provides information about the project (this file).
 
 ## Requirements
-- Python 3.x
+- Python 3.11
 - `requests`: For making HTTP requests.
 - `openai`: To interact with the OpenAI API.
 - `bs4`: Used for parsing HTML content.
@@ -26,10 +26,10 @@ The project is structured into several Python modules, which include:
 To install the necessary dependencies for this project, you should run:
 
 ```bash
-pip install -r requirements.txt
+pipenv sync
 ```
 
-Make sure you have populated the `requirements.txt` file with the libraries mentioned in the Requirements section above.
+Make sure you have populated the `Pipfile.lock` file with the libraries mentioned in the Requirements section above.
 
 ## Usage
 
@@ -61,7 +61,7 @@ Please make sure your code passes all the existing tests and write new tests for
 
 ## License
 
-Please include a license for your project, which will dictate how others can use, modify, and distribute your code. It is important to choose a license aligned with your project's goals.
+MIT
 
 ## Notes
 
@@ -73,5 +73,3 @@ The `Agent` class uses `asyncio` and is designed to operate concurrently for mul
 - Implement rate-limiting and retries within the `llm.py` module when using the OpenAI API.
 - Ensure proper validation and error-handling in the `Agent` logic, especially around downloading problems and generating solutions.
 - Create a comprehensive test suite to cover different scenarios and edge cases.
-
-This README is intended to serve as a starting point. Depending on the future direction and additional features of the LLM-QCoder project, the documentation may need to be updated accordingly.
