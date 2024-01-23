@@ -6,6 +6,7 @@ from typing import List
 
 from bs4 import BeautifulSoup
 
+import code_verification
 from utils import llm
 from utils.http import download_page
 from utils.logging import log, logger
@@ -164,6 +165,13 @@ class Agent:
             return
         else:
             log(f"{self.contest_code}/{self.problem_code}の問題の回答に成功しました")
+
+        # 回答がコンパイルできるかどうかを確認する
+        success = code_verification.is_compilable(program)
+        if not success:
+            # 回答に失敗した場合は、いったん終了する
+            log(f"{self.contest_code}/{self.problem_code}の問題の回答がコンパイルできませんでした")
+            return
 
         success = await self.save_program(program)
         if success:
