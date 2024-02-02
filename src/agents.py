@@ -81,7 +81,7 @@ class Agent:
             + self.problem_code
         )
         page = await download_page(url)
-        soup = BeautifulSoup(page.content, "html.parser")
+        soup = BeautifulSoup(page, "html.parser")
         return soup.get_text()
 
     async def try_download_problem(self) -> str:
